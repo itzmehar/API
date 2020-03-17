@@ -1,0 +1,14 @@
+from urllib.request import urlopen
+import json
+import random 
+
+number = random.randint(0,1642)
+
+link = "https://type.fit/api/quotes"
+
+response = urlopen(link)
+
+data = json.loads(response.read())
+
+print(data[number]["text"])
+print(data[number]["author"])
